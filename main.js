@@ -1,3 +1,17 @@
+
+//Interaccion con el DOM
+
+let primeraSeccion = document.getElementById("primera-seccion");
+primeraSeccion.innerHTML = '<h1 class="titulo">El Vinilo de Vasiliy</h1>'
+
+let parrafoInicio = document.createElement("p");
+parrafoInicio.innerHTML = '<p class="parrafo">La música que trasciende</p>';
+
+primeraSeccion.append(parrafoInicio);
+
+primeraSeccion.className ="primera-seccion";
+
+
 //Funcion de Bienvenida
 
 function bienvenida(){
@@ -208,3 +222,4 @@ if (seleccion == "a") {
 
   
 //Git
+//Branch
