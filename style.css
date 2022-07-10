@@ -5,6 +5,8 @@
     box-sizing: border-box;
 }
 
+/*--------------------------INDEX----------------------------*/
+
 .contenedor-encabezado{
     grid-area: contenedor-encabezado;
     font-family: 'Esteban', serif;
@@ -13,27 +15,27 @@
     position: sticky;
     top:0;
     z-index: 2; 
-   
-
 }
 
 .navegador-principal__logo{
     width: auto;
-    height: 150px;
-    animation: fadeIn 1s ;
-    
-
+    height: 110px;
 }
 
 .navegador-principal__lista{
     color: white;
-    font-size: 1.25rem;
+    font-size: 1.10rem;
 }
 
 
 .fa-solid{
     color:gray;
-    font-size: 30px;
+    font-size: 25px;
+}
+
+.fa-solid:hover{
+    transition:0.5s;
+    color:rgb(173, 173, 173);
 }
 
 
@@ -68,7 +70,521 @@
 
 }
 
- 
+.segunda-seccion{
+    width: 100%;
+    background-color: black;
+    color:white;
+}
 
+.tercera-seccion{
+    width:100%;
+}
+
+.carrusel-imagen {
+    height:420px;
+    object-fit: cover;
+}
+
+
+.cuarta-seccion{
+    width:100%;
+}
+
+.cuarta-seccion h2{
+    background-color: black;
+    color:white;
+    text-transform: uppercase;
+    text-align: center;
+    padding:30px 0px;
+    margin:0px 0px;
+}
+
+.contenedor-productos{
+    margin:0px;
+    background-color: rgb(61, 52, 52);
+}
+
+.contenedor-footer{
+    width: 100%;
+    background-color: black;
+    border-top: 1px solid white;
+ 
+}
+.footer-uno{
+    height:140px;
+}
+.footer__logo{
+    align-self:center;
+
+}
+.footer__logo img{
+    width: auto;
+    height: 110px;
+}
+
+.titulo-nav{
+    color: white;
+    font-size: 25px;
+    font-family: 'Esteban', serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.navegador-footer__lista{
+    display:flex;
+    list-style:none;
+    margin:0;
+    padding:0;
+    position:relative;
+    left:3px;
+    justify-content: center;
+}
+
+.navegador-footer__lista li a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Esteban', serif;
+    padding-left: 15px;
+    font-size:1.10rem;
+}
+
+.navegador-footer__lista li a:hover{
+    transition: 1s;
+    text-shadow: none;
+    color:rgb(51, 51, 155);
+}
+
+.redes-sociales{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.redes-sociales img{
+    width:80px;
+    height:55px;
+    padding-left:30px;
+    position:relative;
+    left:20px;
+}
+
+.redes-sociales img:hover{
+    transition: 1.5s;
+    transform: scale(1.10);
+}
+
+.copyright-footer{
+    color: white;
+    font-family: sans-serif;
+    border-top: 1px solid white;
+    align-items:center;
+}
+
+
+.copyright-parrafo-dos{
+    text-transform: uppercase;
+    font-size:15px;
+}
+
+.cuarta-seccion {
+    background-color: rgb(0, 1, 15);
+}
+
+.card-body h3 {
+    font-size: 17px;
+}
+
+.img-card {
+    height:354px;
+    width:354px;
+}
+
+/*---------------------------TIENDA---------------------------*/
+
+.primera-seccion-tienda{
+    width: 100%;
+    background-color: rgb(0, 1, 15);
+}
+
+.primera-seccion-tienda h1{
+    color:rgb(238, 236, 236);
+    font-size: 80px;
+    font-family: 'Esteban', serif;
+    text-align: center;
+    text-shadow: black 5px 2px;
+}
+
+.cart {
+    background-color: black;
+}
+
+.producto-carrito{
+    background-color:black;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:30px 20px;
+}
+
+.producto-carrito div {
+    width:200px;
+}
+
+.car-img{
+    width:80px;
+    height:auto;
+}
+
+.product-details{
+    font-size: 20px;
+    color:white;
+}
+
+.total-carrito{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    padding:30px 0px;
+}
+
+.total{
+    font-size: 20px;
+    color:white;
+    padding-bottom:20px;
+}
+
+.finalizar{
     
+    font-size: 20px;;
+}
+
+.compra-finalizada{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding:30px 0px;
+}
+
+
+.compra-parrafo{
+    font-size: 20px;;
+    color:white;
+}
+
+.datos-parrafo{
+    font-size: 20px;;
+    color:white;
+}
+
+.formulario-compra{
+    font-size: 20px;
+}
+
+.formularioCompra {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:50px 0px;
+}
+
+.formularioCompra h2{
+    color:white;
+}
+
+.contact__section__item{
+    padding-top:5px;
+    color:white;
+}
+
+.contact__section__item label{ 
+    width:100px;
+}
+
+.contact__section__item input{ 
+    width:400px;
+}
+
+.contact-button{
+    display:flex;
+    justify-content: center;
+    padding-top:10px;
     
+}
+
+.envio{
+    width:500px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.mensaje-final{
+    height:200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color:white;
+    text-align: center;
+
+}
+
+/*---------------------------CONTACTO---------------------------*/
+
+.primera-seccion-contacto{
+    background: linear-gradient(rgba(0, 0, 0, 0.295),rgba(0, 0, 0, 0.295)), url(./Imagenes/Imagen_contacto1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height:70vh;
+    width: 100%;
+    display:flex;
+    align-items:end;
+    justify-content: end;
+    flex-direction:column;
+}
+
+.titulo-contacto{
+    color:rgb(238, 236, 236);
+    font-size: 60px;
+    font-family: 'Esteban', serif;
+    position:relative;
+    right:20px;
+    text-shadow: black 5px 2px;
+    
+}
+
+
+.segunda-seccion-contacto{
+    background-color: rgb(0, 1, 15);;
+    width:100%;
+}
+
+.segunda-seccion-contacto h2{
+    color:white;
+    font-family: 'Esteban', serif;
+    padding-top:150px;
+    font-size:50px;
+    text-align: center;
+}
+
+.formulario{
+    padding:80px 0px 30px 0px;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.formulario-datos{
+    padding-right:20px;
+}
+
+.formulario-datos input{
+    width:300px;
+    height:25px;
+    margin-bottom:53px;
+}
+
+.formulario-mensaje{
+    display:flex;
+    flex-direction:column;
+}
+.formulario-mensaje textarea{
+    width:480px;
+    height:150px;
+    margin-bottom:5px;
+}
+
+.boton-enviar{
+    width:480px;
+    height:25px;
+    background-color: rgb(31, 1, 1);
+    color:white;
+    border-radius: 2px;
+    border:rgb(31, 1, 1);
+}
+
+.boton-enviar:hover{
+    transition:1.5s;
+    background-color:rgb(141, 7, 7);
+    color:rgb(0, 0, 14);
+}
+
+/*---------------------------CARRITO------------------------------*/
+
+.primera-seccion-carrito{
+    width: 100%;
+    background-color: rgb(0, 1, 15);
+}
+
+.primera-seccion-carrito h1{
+    color:rgb(238, 236, 236);
+    font-size: 80px;
+    font-family: 'Esteban', serif;
+    text-align: center;
+    text-shadow: black 5px 2px;
+}
+
+
+
+/*---------------------------RESPONSIVE----------------------------*/
+
+@media all and (max-width:1050px) {
+
+    /*-----------------------------INDEX---------------------------*/
+    .primera-seccion h1{
+        font-size: 50px;
+      
+    }
+
+    .parrafo{
+        font-size: 35px;
+    }
+    .img-card{
+        height:auto;
+        width:auto;
+    }
+    
+    .footer-uno{
+        height:180px;
+    }
+
+    .titulo-nav{
+        position: relative;
+        left:20px;
+    }
+
+    .navegador-footer__lista{
+        flex-direction: column;
+        text-align: center;
+        left:12px;
+    }
+    .redes-sociales{
+        flex-direction:column;
+    }
+
+    .redes-sociales img{
+        width:70px;
+        height:48px;
+    }
+
+    .copyright-footer{
+        flex-direction:column;
+        text-align: center;
+        line-height:normal;
+       
+    }
+
+    .copyright-parrafo-uno{
+        font-size: 13px;
+    }
+
+    /*-----------------------------TIENDA----------------------------*/
+    .producto-carrito{
+        background-color:black;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding:30px 20px;
+    }
+    .car-img{
+        width:150px;
+        height:auto;   
+    }
+    .product-details{
+        font-size: 15px;
+    }
+    
+    .total-carrito{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        padding:30px 0px;
+    }
+    
+    .total{
+        font-size: 15px;
+       
+    }
+    
+    .finalizar{
+        
+        font-size: 15px;;
+    }
+
+    .compra-finalizada{
+        padding:30px 30px;
+    }
+    
+
+    .compra-parrafo{
+        font-size: 15px;;
+    }
+    
+    .datos-parrafo{
+        font-size: 15px;;
+    }
+    
+    .formulario-compra{
+        font-size: 15px;
+    }
+    .contact__section__item{
+        display:flex;
+        justify-content: center;
+    }
+    
+    .contact__section__item label{ 
+        display:none;
+    }
+    
+    .contact__section__item input{ 
+        width:250px;
+    }
+    
+
+    .envio{
+        width:280px;
+        font-size: 15px;
+    }
+    
+    .mensaje-final{
+        font-size: 15px;
+        padding:0px 20px;
+    }
+
+    /*-----------------------------CONTACTO---------------------------*/
+
+    .formulario-datos{
+        padding-right: 0px;
+    }
+
+    .formulario-mensaje textarea{
+        width:330px;
+    }
+
+    .formulario-mensaje input{
+        width:330px;
+    }
+
+    .primera-seccion-tienda h1{
+        font-size: 50px;
+    }
+
+    .primera-seccion-carrito h1{
+        font-size: 50px;
+    }
+
+    .primera-seccion-contacto h1{
+        font-size: 50px;
+    }
+
+    .segunda-seccion-contacto h2{
+        padding:70px 20px 0px 20px;
+        font-size: 40px;
+
+    }
+
+}

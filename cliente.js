@@ -1,14 +1,15 @@
 
-//Definir el Array de Base de Datos de Clientes
+//Definir el Array de Base de Datos de las Consultas de Clientes
 
-const baseClientes = []
+const baseClientesConsulta = []
 
-//Definir la Clase Cliente
+//Definir la Clase Cliente Consulta
 
 class Cliente {
     constructor (nombres,apellidos,correoElectronico){
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correoElectronico = correoElectronico;
+        this.mensajeEnvia = mensajeEnvia;
     }
 }
