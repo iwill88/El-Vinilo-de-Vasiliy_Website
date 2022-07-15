@@ -13,3 +13,7 @@ class Cliente {
         this.mensajeEnvia = mensajeEnvia;
     }
 }
+
+const actualizarStorageCliente = (baseClientesConsulta)=>{
+    localStorage.setItem("baseClienteConsulta", JSON.stringify(baseClientesConsulta));
+};

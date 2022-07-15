@@ -217,6 +217,12 @@
     background-color: black;
 }
 
+.mensaje-vacio{
+    background-color: rgb(207, 194, 194);
+    height: 221px;
+    padding:72px 20px 0px 20px;
+}
+
 .producto-carrito{
     background-color:black;
     display:flex;

@@ -23,6 +23,7 @@ segundaSeccion.innerHTML = '<div class="d-flex flex-row justify-content-around s
 
 const contenedorCarrusel = document.getElementById("contenedor-carrusel");
 carruselImagenes.forEach((carrusel) => {
+  
     let componente = document.createElement("div");
     let html = `<div class="carousel-item active" data-bs-interval="5000">
     <img src="${carrusel.imagen}" class="d-block w-100 carrusel-imagen" alt="Vinilos-carrusel">

@@ -44,7 +44,7 @@ function validarFormulario() {
     document.getElementById("apellidos").value="";
     document.getElementById("email").value="";
     document.getElementById("mensajeEnvia").value="";
-
+    actualizarStorageCliente(baseClientesConsulta);
     //miFormulario.submit();
 
 }
