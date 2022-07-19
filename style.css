@@ -450,7 +450,7 @@
         font-size: 35px;
     }
     .img-card{
-        height:auto;
+        height:300px;
         width:auto;
     }
     
@@ -574,6 +574,15 @@
 
     /*-----------------------------CONTACTO---------------------------*/
 
+    .primera-seccion-contacto{
+        align-items:center;
+        justify-content: center;
+    }
+
+    .titulo-contacto{
+        right:0px;
+        font-size: 50px;
+    }
     .formulario-datos{
         padding-right: 0px;
     }
