@@ -243,6 +243,7 @@
 .product-details{
     font-size: 20px;
     color:white;
+    
 }
 
 .total-carrito{
@@ -466,9 +467,13 @@
         flex-direction: column;
         text-align: center;
         left:12px;
+        
     }
+
+
     .redes-sociales{
         flex-direction:column;
+        
     }
 
     .redes-sociales img{
@@ -499,9 +504,14 @@
     .car-img{
         width:150px;
         height:auto;   
+        padding-bottom:15px;
     }
     .product-details{
         font-size: 15px;
+    }
+
+    .boton-eliminar{
+        margin-top:15px;
     }
     
     .total-carrito{
@@ -512,13 +522,14 @@
     }
     
     .total{
-        font-size: 15px;
+        font-size: 18px;
        
     }
+
     
     .finalizar{
         
-        font-size: 15px;;
+        font-size: 18px;;
     }
 
     .compra-finalizada{

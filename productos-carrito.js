@@ -10,7 +10,7 @@ const dibujarCarrito = () =>{
             total = total + producto.precio * producto.cantidad;
             const carritoContainer = document.createElement("div");
             carritoContainer.className ="producto-carrito";
-            carritoContainer.innerHTML = `<img class="car-img" src="${producto.imagen}"/><div class="product-details">${producto.nombre}</div><div class="product-details"> Cantidad: ${producto.cantidad}</div><div class="product-details"> Precio: S/.${producto.precio}</div><div class="product-details"> Subtotal: S/.${producto.precio*producto.cantidad}</div><button class="btn btn-outline-success fs-5" id="remove-product" onClick="removeProduct(${indice})">Eliminar producto</button>`;
+            carritoContainer.innerHTML = `<img class="car-img" src="${producto.imagen}"/><div class="product-details">${producto.nombre}</div><div class="product-details"> Cantidad: ${producto.cantidad}</div><div class="product-details"> Precio: S/.${producto.precio}</div><div class="product-details"> Subtotal: S/.${producto.precio*producto.cantidad}</div><button class="btn btn-outline-success fs-5 boton-eliminar" id="remove-product" onClick="removeProduct(${indice})">Eliminar producto</button>`;
         modalCarrito.appendChild(carritoContainer);
         });
         const totalContainer =document.createElement("div");

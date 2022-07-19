@@ -8,6 +8,7 @@ carruselImagenes = [
     {imagen:"Imagenes/Imagen_carrusel4.jpg"},
 ]
 
+
 let primeraSeccion = document.getElementById("primera-seccion");
 primeraSeccion.innerHTML = '<h1 class="titulo">El Vinilo de Vasiliy</h1>';
 
@@ -31,3 +32,23 @@ carruselImagenes.forEach((carrusel) => {
     componente.innerHTML = html;
     contenedorCarrusel.appendChild(componente);
 });
+
+const contenedor2 = document.getElementById("containerMasVendidos");
+vinilosLista.forEach((producto,indice) => { 
+  if (producto.masVendido == 1) {
+    let card = document.createElement("div");
+    card.classList.add("col-12", "mb-2", "col-md-4");
+    let html = `<div class="card"><img src="${producto.imagen}" alt="img card" class="img-card"><div class="card-body"><h3>${producto.nombre}</h3><p>S/.${producto.precio}</p><button class="btn btn-dark" data-id="1" onClick="agregarAlcarrito(${indice})">Comprar</button></div></div>`;
+    card.innerHTML = html;
+    contenedor2.appendChild(card);
+  }
+   
+});
+
+
+
+
+
+
+
+
