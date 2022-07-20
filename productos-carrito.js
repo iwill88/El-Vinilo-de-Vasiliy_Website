@@ -72,11 +72,11 @@ const mostrarMensaje = () => {
 
 
 const actualizarStorage = (cart)=>{
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart)) ;
 };
 
 function obtenerProductosCarrito () {
-    JSON.parse(localStorage.getItem("cart"));
+    JSON.parse(localStorage.getItem("cart")) || [];;
 };
 
 
