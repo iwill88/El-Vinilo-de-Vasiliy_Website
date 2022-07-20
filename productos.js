@@ -1,6 +1,5 @@
 
 
-
 let contenedor = document.getElementById("container");
 vinilosLista.forEach((producto,indice) => {
     let card = document.createElement("div");

@@ -42,15 +42,15 @@ const agregarAlcarrito=(indice)=>{
         productoAgregar.cantidad=1;
         cart=obtenerProductosCarrito();
         cart.push(productoAgregar);
+  
         
         
     } else {
         cart=obtenerProductosCarrito();
         cart[indiceEncontradoCarrito].cantidad += 1;
-       
+
     }
     actualizarStorage(cart);
 };
 
-
-
+/*Merge*/

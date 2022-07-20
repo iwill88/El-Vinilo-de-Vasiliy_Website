@@ -1,11 +1,10 @@
-
 //Interaccion con el DOM
 
 carruselImagenes = [
-    {imagen:"Imagenes/Imagen_carrusel1.jpg"},
-    {imagen:"Imagenes/Imagen_carrusel2.jpg"},
-    {imagen:"Imagenes/Imagen_carrusel3.jpg"},
-    {imagen:"Imagenes/Imagen_carrusel4.jpg"},
+  {imagen:"Imagenes/Imagen_carrusel1.jpg"},
+  {imagen:"Imagenes/Imagen_carrusel2.jpg"},
+  {imagen:"Imagenes/Imagen_carrusel3.jpg"},
+  {imagen:"Imagenes/Imagen_carrusel4.jpg"},
 ]
 
 
@@ -24,31 +23,23 @@ segundaSeccion.innerHTML = '<div class="d-flex flex-row justify-content-around s
 
 const contenedorCarrusel = document.getElementById("contenedor-carrusel");
 carruselImagenes.forEach((carrusel) => {
-  
-    let componente = document.createElement("div");
-    let html = `<div class="carousel-item active" data-bs-interval="5000">
-    <img src="${carrusel.imagen}" class="d-block w-100 carrusel-imagen" alt="Vinilos-carrusel">
-  </div>`;
-    componente.innerHTML = html;
-    contenedorCarrusel.appendChild(componente);
+
+  let componente = document.createElement("div");
+  let html = `<div class="carousel-item active" data-bs-interval="5000">
+  <img src="${carrusel.imagen}" class="d-block w-100 carrusel-imagen" alt="Vinilos-carrusel">
+</div>`;
+  componente.innerHTML = html;
+  contenedorCarrusel.appendChild(componente);
 });
 
 const contenedor2 = document.getElementById("containerMasVendidos");
 vinilosLista.forEach((producto,indice) => { 
-  if (producto.masVendido == 1) {
-    let card = document.createElement("div");
-    card.classList.add("col-12", "mb-2", "col-md-4");
-    let html = `<div class="card"><img src="${producto.imagen}" alt="img card" class="img-card"><div class="card-body"><h3>${producto.nombre}</h3><p>S/.${producto.precio}</p><button class="btn btn-dark" data-id="1" onClick="agregarAlcarrito(${indice})">Comprar</button></div></div>`;
-    card.innerHTML = html;
-    contenedor2.appendChild(card);
-  }
-   
+if (producto.masVendido == 1) {
+  let card = document.createElement("div");
+  card.classList.add("col-12", "mb-2", "col-md-4");
+  let html = `<div class="card"><img src="${producto.imagen}" alt="img card" class="img-card"><div class="card-body"><h3>${producto.nombre}</h3><p>S/.${producto.precio}</p><button class="btn btn-dark" data-id="1" onClick="agregarAlcarrito(${indice})">Comprar</button></div></div>`;
+  card.innerHTML = html;
+  contenedor2.appendChild(card);
+}
+ 
 });
-
-
-
-
-
-
-
-
