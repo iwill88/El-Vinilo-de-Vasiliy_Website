@@ -53,4 +53,3 @@ const agregarAlcarrito=(indice)=>{
     actualizarStorage(cart);
 };
 
-/*Merge*/
