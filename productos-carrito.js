@@ -1,9 +1,20 @@
+function mensajeError() {
+    Toastify({
+        text: "Completa todos los campos!",
+        className: "info",
+        duration: 2000,
+        style: {
+          background: "linear-gradient(90deg, rgba(217,13,13,1) 0%, rgba(212,72,44,1) 42%, rgba(255,43,0,1) 73%)",
+        }
+      }).showToast();
+}
+
 cart = JSON.parse(localStorage.getItem("cart"));
 let modalCarrito = document.getElementById("cart");
 let total=0;
 const dibujarCarrito = () =>{
-    modalCarrito.className="cart";
     modalCarrito.innerHTML =`<div class="mensaje-vacio"><p class="text-center py-3 fs-4 bg-danger text-white">No se encontraron productos en el carrito!</p></div>`;
+    modalCarrito.className="cart";
     if (cart.length >0){
         modalCarrito.innerHTML = "";
         cart.forEach((producto,indice)=>{
@@ -49,19 +60,19 @@ const mostrarMensaje = () => {
     const telefonoCliente =document.getElementById("telefono").value;
     const domicilioCliente =document.getElementById("domicilio").value;
     if (nombreCliente==""){
-        alert("Completa todos los campos!");
+        mensajeError();
         return false;
     }
     if (emailCliente==""){
-        alert("Completa todos los campos!");
+        mensajeError();
         return false;
     }
     if (telefonoCliente==""){
-        alert("Completa todos los campos!");
+        mensajeError();
         return false;
     }
     if (domicilioCliente==""){
-        alert("Completa todos los campos!");
+        mensajeError();
         return false;
     }
     modalCarrito.innerHTML ="";

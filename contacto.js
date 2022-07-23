@@ -1,4 +1,15 @@
 //validarFormularioConsulta
+function mensajeError() {
+    Toastify({
+        text: "Completa todos los campos!",
+        className: "info",
+        duration: 2000,
+        style: {
+          background: "linear-gradient(90deg, rgba(217,13,13,1) 0%, rgba(212,72,44,1) 42%, rgba(255,43,0,1) 73%)",
+        }
+      }).showToast();
+}
+
 
 let miFormulario = document.getElementById("form");
 let botonEnviar = document.getElementById("boton-enviar");
@@ -11,22 +22,22 @@ function validarFormulario() {
     let mensajeEnvia = document.getElementById("mensajeEnvia").value;
  
     if (nombres==""){
-        alert("Completa todos los campos!");
+        mensajeError();
         return false;
     }
 
     if (apellidos==""){
-        alert("Completa todos los campos!");
+        mensajeError();
         return false;
     }
 
     if (email==""){
-        alert("Completa todos los campos!");
+        mensajeError();
         return false;
     }
 
     if (mensajeEnvia==""){
-        alert("Completa todos los campos!");
+        mensajeError();
         return false;
     }
 

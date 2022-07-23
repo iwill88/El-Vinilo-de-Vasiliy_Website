@@ -34,16 +34,18 @@ function obtenerProductosCarrito() {
 };
 
 const agregarAlcarrito=(indice)=>{
+    cart=obtenerProductosCarrito();
     const indiceEncontradoCarrito = cart.findIndex((elemento)=>{
         return elemento.id ===vinilosLista[indice].id
     });
+    console.log(indiceEncontradoCarrito);
     if (indiceEncontradoCarrito ===-1){
         const productoAgregar = vinilosLista[indice];
         productoAgregar.cantidad=1;
         cart=obtenerProductosCarrito();
         cart.push(productoAgregar);
+    
   
-        
         
     } else {
         cart=obtenerProductosCarrito();
@@ -51,5 +53,20 @@ const agregarAlcarrito=(indice)=>{
 
     }
     actualizarStorage(cart);
+    Toastify({
+        text: "Producto agregado",
+        duration: 2000,
+        destination: "carrito.html",
+        newWindow: true,
+        close: true,
+        gravity: "top", 
+        position: "right", 
+        stopOnFocus: true, 
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+      
 };
 
