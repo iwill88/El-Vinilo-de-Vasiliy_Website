@@ -43,3 +43,33 @@ if (producto.masVendido == 1) {
 }
  
 });
+
+function cancelar(){
+  const contenedor3 = document.getElementById("tributoTheBeatles");
+  contenedor3.innerHTML=`<div class="d-flex justify-content-center"><button class="btn btn-success boton-Beatles mb-5 " onClick="listaAlbums()">Lista de Albumes</button></div>`;
+}
+
+function listaAlbums(){
+  const contenedor3 = document.getElementById("tributoTheBeatles");
+  contenedor3.innerHTML="";
+  let botonCancelar = document.createElement("div");
+  botonCancelar.classList.add("d-flex", "justify-content-center");
+  let cancelar= `<button class="btn btn-danger boton-Beatles mb-5 " onClick="cancelar()">Cancelar</button>`;
+  botonCancelar.innerHTML=cancelar;
+  contenedor3.appendChild(botonCancelar);
+  console.log(contenedor3);
+  fetch('https://the-beatles-api.herokuapp.com/api/v1/albums')
+  .then((response)=>response.json())
+  .then((data)=>{
+    data.forEach((producto) => { 
+        let card = document.createElement("div");
+        card.classList.add("col-12", "mb-2", "col-md-4");
+        let html = `<div class="card card-beatles"><div class="card-body"><h3>"${producto.albumName}"</h3><p>Genero: ${producto.genre}</p><p>Fecha de lanzamiento: ${producto.releaseDate}</p><p>Cantidad de canciones: ${producto.trackCount}</p></div></div>`;
+        card.innerHTML = html;
+        contenedor3.appendChild(card);
+  
+    })
+  });
+  
+}
+
