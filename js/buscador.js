@@ -1,5 +1,8 @@
 function buscarGenero(genero){
-  contenedor.innerHTML=  `<div class="row" id="container"></div>`;
+  contenedor.innerHTML = `<div class="d-flex justify-content-center align-items-center cargador mb-5" ><div class="spinner-border text-success " style="width: 3rem; height: 3rem; role="status">
+  <span class="visually-hidden">Loading...</span></div></div>`;
+  setTimeout(()=>{
+    contenedor.innerHTML=  `<div class="row" id="container"></div>`;
   (genero=="rock")&&(
       vinilosLista.forEach((producto,indice) => { 
           (producto.gender == "rock")&&(
@@ -33,10 +36,15 @@ function buscarGenero(genero){
             );
     })
     );
+  },1500)
+  
 }
 
 function buscadorNombre() {
-  contenedor.innerHTML=  `<div class="row" id="container"></div>`;
+  contenedor.innerHTML = `<div class="d-flex justify-content-center align-items-center cargador mb-5"><div class="spinner-border text-success " style="width: 3rem; height: 3rem; role="status">
+  <span class="visually-hidden">Loading...</span></div></div>`;
+  setTimeout(()=>
+  {contenedor.innerHTML=  `<div class="row" id="container"></div>`;
   nombreVinilo = document.getElementById("nombreVinilo").value;
   vinilosLista.forEach((producto,indice) => { 
     (producto.nombre.includes(nombreVinilo))&&(
@@ -46,6 +54,6 @@ function buscadorNombre() {
       card.innerHTML = html,
       contenedor.appendChild(card)
       );
-})
+})},1500);
   
 };

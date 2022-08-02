@@ -1,4 +1,6 @@
+
 [
+
     {"id":1,"gender":"rock",    "nombre":"Led Zeppelin-III","precio":160, "imagen":"./Imagenes/Discos/Led-Zeppelin-III.jpg", "masVendido":1},
     {"id":2,"gender":"rock",    "nombre":"Led Zeppelin-Houses of the Holy","precio":150, "imagen":"./Imagenes/Discos/Led-Zeppelin_Houses-of-the-Holy.jpg", "masVendido":0 },
     {"id":3,"gender":"rock",    "nombre":"Black Sabbath-Black Sabbath","precio":140, "imagen":"./Imagenes/Discos/Black-Sabbath_Black-Sabbath.jpg", "masVendido":0 },

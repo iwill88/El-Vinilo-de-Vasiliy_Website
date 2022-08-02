@@ -20,6 +20,9 @@ const vinilosLista = [
   {id:17,gender:"blues",nombre:'"Eric Clapton-Nothing But The Blues"',precio:160, imagen:"./Imagenes/Discos/Blues/Eric-Clapton-Nothing-But-The-Blues.jpg", masVendido:0 },
   {id:18,gender:"blues",nombre:'"Gary Moore-Blues Alive"',precio:120, imagen:"./Imagenes/Discos/Blues/Gary-Moore-Blues-Alive.jpg", masVendido:0 },
   {id:19,gender:"blues",nombre:'"Muddy Waters-At Newport 1960"',precio:130, imagen:"./Imagenes/Discos/Blues/Muddy-Waters-Muddy-Watters-At-Newport-1960.jpg", masVendido:0 },
+  {id:20,gender:"rock",nombre:'"Elvis Presley-The Essential"',precio:150, imagen:"./Imagenes/Discos/Elvis-Presley_The-Essential.jpg", masVendido:0 },
+  {id:21,gender:"rock",nombre:'"Elvis Presley-Blue Hawaii"',precio:200, imagen:"./Imagenes/Discos/Elvis-Presley_Blue-Hawaii.jpg", masVendido:0 },
+
 ];
 
 

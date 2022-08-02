@@ -9,10 +9,10 @@ carruselImagenes = [
 
 
 let primeraSeccion = document.getElementById("primera-seccion");
-primeraSeccion.innerHTML = '<h1 class="titulo">El Vinilo de Vasiliy</h1>';
+primeraSeccion.innerHTML = '<h1 class="titulo" data-aos="fade-zoom-in" data-aos-delay="300" data-aos-duration="2000">El Vinilo de Vasiliy</h1>';
 
 let parrafoInicio = document.createElement("p");
-parrafoInicio.innerHTML = '<p class="parrafo">La música que trasciende...</p>';
+parrafoInicio.innerHTML = '<p class="parrafo" data-aos="fade-zoom-in" data-aos-delay="300" data-aos-duration="2000">La música que trasciende...</p>';
 
 primeraSeccion.append(parrafoInicio);
 
@@ -50,26 +50,32 @@ function cancelar(){
 }
 
 function listaAlbums(){
+
   const contenedor3 = document.getElementById("tributoTheBeatles");
-  contenedor3.innerHTML="";
-  let botonCancelar = document.createElement("div");
-  botonCancelar.classList.add("d-flex", "justify-content-center");
-  let cancelar= `<button class="btn btn-danger boton-Beatles mb-5 " onClick="cancelar()">Cancelar</button>`;
-  botonCancelar.innerHTML=cancelar;
-  contenedor3.appendChild(botonCancelar);
-  console.log(contenedor3);
-  fetch('https://the-beatles-api.herokuapp.com/api/v1/albums')
-  .then((response)=>response.json())
-  .then((data)=>{
-    data.forEach((producto) => { 
-        let card = document.createElement("div");
-        card.classList.add("col-12", "mb-2", "col-md-4");
-        let html = `<div class="card card-beatles"><div class="card-body"><h3>"${producto.albumName}"</h3><p>Genero: ${producto.genre}</p><p>Fecha de lanzamiento: ${producto.releaseDate}</p><p>Cantidad de canciones: ${producto.trackCount}</p></div></div>`;
-        card.innerHTML = html;
-        contenedor3.appendChild(card);
+  contenedor3.innerHTML = `<div class="d-flex justify-content-center align-items-center cargador mb-5" ><div class="spinner-border text-success " style="width: 3rem; height: 3rem; role="status">
+  <span class="visually-hidden">Loading...</span></div></div>`;
+  setTimeout(()=>{
+    contenedor3.innerHTML="";
+    let botonCancelar = document.createElement("div");
+    botonCancelar.classList.add("d-flex", "justify-content-center");
+    let cancelar= `<button class="btn btn-danger boton-Beatles mb-5 " onClick="cancelar()">Cancelar</button>`;
+    botonCancelar.innerHTML=cancelar;
+    contenedor3.appendChild(botonCancelar);
+    console.log(contenedor3);
+    fetch('https://the-beatles-api.herokuapp.com/api/v1/albums')
+    .then((response)=>response.json())
+    .then((data)=>{
+      data.forEach((producto) => { 
+          let card = document.createElement("div");
+          card.classList.add("col-12", "mb-2", "col-md-4");
+          let html = `<div class="card card-beatles"><div class="card-body"><h3>"${producto.albumName}"</h3><p>Genero: ${producto.genre}</p><p>Fecha de lanzamiento: ${producto.releaseDate}</p><p>Cantidad de canciones: ${producto.trackCount}</p></div></div>`;
+          card.innerHTML = html;
+          contenedor3.appendChild(card);
+    
+      })
+    });
+  },1500);    
   
-    })
-  });
   
 }
 

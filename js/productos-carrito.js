@@ -43,15 +43,25 @@ const removeProduct =(indice)=>{
 
 const finalizarCompra = () => {
     const total =document.getElementsByClassName("total")[0].innerHTML;
-    modalCarrito.innerHTML = "";
-    const compraFinalizada = `<div class="compra-finalizada"><p class="compra-parrafo">LA COMPRA ASCIENDE A UN MONTO ${total} </p><div class="datos-cliente"><p class="datos-parrafo">Complete el formulario con sus datos para coordinar la entrega</p><button class = "btn btn-success formulario-compra" id ="formulario" onClick="dibujarFormu()">FORMULARIO</button></div>`
-    modalCarrito.innerHTML=compraFinalizada;
+    modalCarrito.innerHTML = `<div class="d-flex justify-content-center align-items-center cargador-black" ><div class="spinner-border text-success " style="width: 3rem; height: 3rem; role="status">
+    <span class="visually-hidden">Loading...</span></div></div>`;
+    setTimeout(()=>{
+        modalCarrito.innerHTML = "";
+        const compraFinalizada = `<div class="compra-finalizada"><p class="compra-parrafo">LA COMPRA ASCIENDE A UN MONTO ${total} </p><div class="datos-cliente"><p class="datos-parrafo">Complete el formulario con sus datos para coordinar la entrega</p><button class = "btn btn-success formulario-compra" id ="formulario" onClick="dibujarFormu()">FORMULARIO</button></div>`
+        modalCarrito.innerHTML=compraFinalizada;
+    },1000);
+    
 };
 
 const dibujarFormu =()=>{
-    modalCarrito.innerHTML = "";
-const formulario = `<div class="formularioCompra"><h2> DATOS PARA EL ENVIO </h2><div><div class="contact__section__item"><label>Nombre</label><input type="text" id="nombre" placeholder="Nombre" /></div><div class="contact__section__item"><label>Email</label><input type="text" id="mail" placeholder="Email" /></div><div class="contact__section__item"><label>Telefono</label><input type="text" id="telefono" placeholder="Telefono" /></div><div class="contact__section__item"><label>Domicilio</label><input type="text" id="domicilio" placeholder="Domicilio" /></div><div class="contact-button"><button type="button" class="btn btn-success envio" onClick="mostrarMensaje()">Confirmar</button></div></div></div>`
-modalCarrito.innerHTML=formulario;
+    modalCarrito.innerHTML = `<div class="d-flex justify-content-center align-items-center cargador-black" ><div class="spinner-border text-success " style="width: 3rem; height: 3rem; role="status">
+    <span class="visually-hidden">Loading...</span></div></div>`;
+    setTimeout(()=>{
+        modalCarrito.innerHTML = "";
+        const formulario = `<div class="formularioCompra"><h2> DATOS PARA EL ENVIO </h2><div><div class="contact__section__item"><label>Nombre</label><input type="text" id="nombre" placeholder="Nombre" /></div><div class="contact__section__item"><label>Email</label><input type="text" id="mail" placeholder="Email" /></div><div class="contact__section__item"><label>Telefono</label><input type="text" id="telefono" placeholder="Telefono" /></div><div class="contact__section__item"><label>Domicilio</label><input type="text" id="domicilio" placeholder="Domicilio" /></div><div class="contact-button"><button type="button" class="btn btn-success envio" onClick="mostrarMensaje()">Confirmar</button></div></div></div>`
+        modalCarrito.innerHTML=formulario;
+    },1000);
+
 }
 
 const mostrarMensaje = () => {
@@ -75,9 +85,14 @@ const mostrarMensaje = () => {
         mensajeError();
         return false;
     }
-    modalCarrito.innerHTML ="";
-    let mensaje = `<div class="mensaje-final">Gracias ${nombreCliente} por su compra! en 72 hrs recibira su paquete en ${domicilioCliente}!</div>`
-    modalCarrito.innerHTML = mensaje;
+    modalCarrito.innerHTML = `<div class="d-flex justify-content-center align-items-center cargador-black" ><div class="spinner-border text-success " style="width: 3rem; height: 3rem; role="status">
+    <span class="visually-hidden">Loading...</span></div></div>`;
+    setTimeout(()=>{
+        modalCarrito.innerHTML ="";
+        let mensaje = `<div class="mensaje-final">Gracias ${nombreCliente} por su compra! en 72 hrs recibira su paquete en ${domicilioCliente}!</div>`
+        modalCarrito.innerHTML = mensaje;
+    },1000);
+
 }
 
 
