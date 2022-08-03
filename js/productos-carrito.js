@@ -110,16 +110,16 @@ function agregarItem(id){
     let cart = obtenerProductosCarrito();
     let pos = cart.findIndex(x=> x.id == id);
 
-    if (pos>-1){
-        cart[pos].cantidad += 1;
+    (pos>-1)?(
+        cart[pos].cantidad += 1
         
-    } else {
-        let producto =buscarProducto(id);
-        producto.cantidad =1;
-        cart.push(producto); 
-        producto.id=indice;
+        ):(
+        producto =buscarProducto(id),
+        producto.cantidad =1,
+        cart.push(producto),
+        producto.id=indice
        
-    }
+        )
     actualizarStorage(cart);
     actualizarBotonCarrito();
     dibujarCarrito();
@@ -130,9 +130,8 @@ function eliminarItem(id){
     let cart = obtenerProductosCarrito();
     let pos = cart.findIndex(x=> x.id == id);
     cart[pos].cantidad -=1;
-    if (cart[pos].cantidad==0){
-        cart.splice(pos,1); 
-    }
+    (cart[pos].cantidad==0)&&(
+        cart.splice(pos,1)); 
     actualizarStorage(cart);
     actualizarBotonCarrito();
     dibujarCarrito();
