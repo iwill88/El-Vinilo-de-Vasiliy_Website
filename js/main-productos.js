@@ -36,6 +36,16 @@ function obtenerProductosCarrito() {
     return JSON.parse(localStorage.getItem("cart")) || [];
 };
 
+function vaciarCarrito() {
+    cart=[];
+    console.log(cart);
+    actualizarStorage(cart);
+    actualizarBotonCarrito();
+    modalCarrito.innerHTML =`<div class="mensaje-vacio"><p class="text-center py-3 fs-4 bg-danger text-white">No se encontraron productos en el carrito!</p></div>`;
+    modalCarrito.className="cart";
+
+}
+
 const agregarAlcarrito=(indice)=>{
     cart=obtenerProductosCarrito();
     const indiceEncontradoCarrito = cart.findIndex((elemento)=>{
@@ -47,15 +57,18 @@ const agregarAlcarrito=(indice)=>{
         productoAgregar.cantidad=1;
         cart=obtenerProductosCarrito();
         cart.push(productoAgregar);
-    
+       
   
         
     } else {
         cart=obtenerProductosCarrito();
         cart[indiceEncontradoCarrito].cantidad += 1;
-
+        
     }
+
     actualizarStorage(cart);
+    actualizarBotonCarrito();
+    
     Toastify({
         text: "Producto agregado",
         duration: 2000,
@@ -70,6 +83,26 @@ const agregarAlcarrito=(indice)=>{
         },
         onClick: function(){} // Callback after click
       }).showToast();
-      
+
 };
+
+function actualizarBotonCarrito() {
+    let productos = obtenerProductosCarrito();
+    let contenido =`<button type="button" class="btn btn-success position-relative"><i class=" navegador-principal__carrito fa-solid fa-basket-shopping"></i>
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span></button>`;
+    let total =0;
+
+    if (productos.length > 0) {
+        for (let producto of productos) {
+            total += producto.cantidad;
+        }
+
+        contenido =`<button type="button" class="btn btn-success position-relative"><i class=" navegador-principal__carrito fa-solid fa-basket-shopping"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${total}</span></button>`;
+    }
+
+    document.getElementById("boton_carrito").innerHTML = contenido;
+}
+
+actualizarBotonCarrito();
 

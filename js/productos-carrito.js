@@ -9,19 +9,22 @@ function mensajeError() {
       }).showToast();
 }
 
-cart = JSON.parse(localStorage.getItem("cart"));
+
 let modalCarrito = document.getElementById("cart");
-let total=0;
+
 const dibujarCarrito = () =>{
+    cart = JSON.parse(localStorage.getItem("cart"));
+    let total=0;
     modalCarrito.innerHTML =`<div class="mensaje-vacio"><p class="text-center py-3 fs-4 bg-danger text-white">No se encontraron productos en el carrito!</p></div>`;
     modalCarrito.className="cart";
     if (cart.length >0){
         modalCarrito.innerHTML = "";
+        modalCarrito.innerHTML = `<div class="d-flex pe-5 pt-5 vaciar-carrito"><button class="btn btn-danger fs-5 vaciar-carrito-btn " onClick="vaciarCarrito()">Vaciar Carrito<i class="fa-solid fa-trash-can ps-2"></i></button></div>`;
         cart.forEach((producto,indice)=>{
             total = total + producto.precio * producto.cantidad;
             const carritoContainer = document.createElement("div");
             carritoContainer.className ="producto-carrito";
-            carritoContainer.innerHTML = `<img class="car-img" src="${producto.imagen}"/><div class="product-details">${producto.nombre}</div><div class="product-details"> Cantidad: ${producto.cantidad}</div><div class="product-details"> Precio: S/.${producto.precio}</div><div class="product-details"> Subtotal: S/.${producto.precio*producto.cantidad}</div><button class="btn btn-outline-success fs-5 boton-eliminar" id="remove-product" onClick="removeProduct(${indice})">Eliminar producto</button>`;
+            carritoContainer.innerHTML = `<img class="car-img" src="${producto.imagen}"/><div class="product-details">${producto.nombre}</div><div class="product-details"><a hred="#" class="btn btn-success me-2 botonCantidad" onClick="agregarItem(${producto.id})">+</a>${producto.cantidad}<a hred="#" class="btn btn-success ms-2 botonCantidad" onClick="eliminarItem(${producto.id})">-</a></div><div class="product-details"> Precio: S/.${producto.precio}</div><div class="product-details"> Subtotal: S/.${producto.precio*producto.cantidad}</div><button class="btn btn-outline-success fs-5 boton-eliminar" id="remove-product" onClick="removeProduct(${indice})">Eliminar producto</button>`;
         modalCarrito.appendChild(carritoContainer);
         });
         const totalContainer =document.createElement("div");
@@ -39,6 +42,8 @@ const removeProduct =(indice)=>{
     cart.splice(indice, 1);
     actualizarStorage(cart);
     dibujarCarrito();
+    actualizarBotonCarrito();
+   
 }
 
 const finalizarCompra = () => {
@@ -96,14 +101,47 @@ const mostrarMensaje = () => {
 }
 
 
+function buscarProducto(id){
+    let productos = obtenerProductosCarrito();
+    return productos.find(x=> x.id == id);
+}
 
-const actualizarStorage = (cart)=>{
-    localStorage.setItem("cart", JSON.stringify(cart)) ;
-};
+function agregarItem(id){
+    let cart = obtenerProductosCarrito();
+    let pos = cart.findIndex(x=> x.id == id);
 
-function obtenerProductosCarrito () {
-    JSON.parse(localStorage.getItem("cart")) || [];;
-};
+    if (pos>-1){
+        cart[pos].cantidad += 1;
+        
+    } else {
+        let producto =buscarProducto(id);
+        producto.cantidad =1;
+        cart.push(producto); 
+        producto.id=indice;
+       
+    }
+    actualizarStorage(cart);
+    actualizarBotonCarrito();
+    dibujarCarrito();
+    
+}
+
+function eliminarItem(id){
+    let cart = obtenerProductosCarrito();
+    let pos = cart.findIndex(x=> x.id == id);
+    cart[pos].cantidad -=1;
+    if (cart[pos].cantidad==0){
+        cart.splice(pos,1); 
+    }
+    actualizarStorage(cart);
+    actualizarBotonCarrito();
+    dibujarCarrito();
+    }
+    
+    
+
+
 
 
 dibujarCarrito();
+actualizarBotonCarrito();
