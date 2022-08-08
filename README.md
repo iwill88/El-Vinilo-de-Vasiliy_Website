@@ -13,7 +13,6 @@ _A continuación parte de las herramientas y tecnologías utilizadas._
 [![Bootstrap Follow](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white&labelColor=101010)](#)
 </br>
 [![AJAX](https://img.shields.io/badge/AJAX-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white&labelColor=101010)](#)
-
 </br>
 [![JSON Follow](https://img.shields.io/badge/json-E34F26?style=for-the-badge&logo=json&logoColor=white&labelColor=101010)](#)
 
