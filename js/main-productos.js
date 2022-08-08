@@ -46,6 +46,13 @@ function vaciarCarrito() {
 
 }
 
+function vaciarCarritoFinal() {
+    cart=[];
+    console.log(cart);
+    actualizarStorage(cart);
+    actualizarBotonCarrito();
+}
+
 const agregarAlcarrito=(indice)=>{
     cart=obtenerProductosCarrito();
     const indiceEncontradoCarrito = cart.findIndex((elemento)=>{

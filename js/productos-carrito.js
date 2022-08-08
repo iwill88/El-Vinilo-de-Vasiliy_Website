@@ -94,10 +94,10 @@ const mostrarMensaje = () => {
     <span class="visually-hidden">Loading...</span></div></div>`;
     setTimeout(()=>{
         modalCarrito.innerHTML ="";
-        let mensaje = `<div class="mensaje-final">Gracias ${nombreCliente} por su compra! en 72 hrs recibira su paquete en ${domicilioCliente}!</div>`
+        let mensaje = `<div class="mensaje-final"><p>Gracias ${nombreCliente} por su compra! en 72 hrs recibira su paquete en ${domicilioCliente}!</p></div>`
         modalCarrito.innerHTML = mensaje;
     },1000);
-
+    vaciarCarritoFinal();
 }
 
 
