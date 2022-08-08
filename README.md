@@ -16,7 +16,7 @@ _A continuación parte de las herramientas y tecnologías utilizadas._
 </br>
 [![JSON Follow](https://img.shields.io/badge/json-E34F26?style=for-the-badge&logo=json&logoColor=white&labelColor=101010)](#)
 
-![Maquetado](https://github.com/iwill88/Bodega-Castaneda_Website/blob/master/Imagenes/Bodega-Casta%C3%B1eda_Website.jpg)
+![Maquetado](https://github.com/iwill88/ProyectoFinalJs/blob/master/Imagenes/El-Vinilo-de-Vasiliy_Website.jpg)
 
 ## Muchas gracias por tomarte el tiempo en revisar mi trabajo! 🎁
 
